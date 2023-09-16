@@ -29,7 +29,6 @@ public class StatisticDto implements Serializable {
     @NotNull
     private Integer humidity;
     @NotNull
-    private LocalTime time;
-    @NotNull
-    private Boolean tracked = false;
+    private String time;
+
 }
