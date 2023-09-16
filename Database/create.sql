@@ -4,7 +4,6 @@ CREATE TABLE weather.statistics (
                                     temp decimal  NOT NULL,
                                     wind decimal  NOT NULL,
                                     humidity int  NOT NULL,
-                                    time time  NOT NULL,
-                                    tracked boolean NOT NULL,
+                                    time varchar  NOT NULL,
                                     CONSTRAINT contact_pk PRIMARY KEY (id)
 );
