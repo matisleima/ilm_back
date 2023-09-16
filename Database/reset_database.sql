@@ -1,0 +1,4 @@
+DROP SCHEMA weather CASCADE;
+CREATE SCHEMA weather
+    GRANT ALL ON SCHEMA weather TO postgres;
+GRANT ALL ON SCHEMA weather TO PUBLIC;
