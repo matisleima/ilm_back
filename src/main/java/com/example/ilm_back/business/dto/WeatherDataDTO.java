@@ -1,9 +1,10 @@
-package com.example.ilm_back.business;
+package com.example.ilm_back.business.dto;
 
 import com.example.ilm_back.domain.statistic.Statistic;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,7 +18,8 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StatisticDto implements Serializable {
+@Builder
+public class WeatherDataDTO implements Serializable {
     private Integer id;
     @NotNull
     @Size(max = 255)
@@ -28,6 +30,4 @@ public class StatisticDto implements Serializable {
     private BigDecimal wind;
     @NotNull
     private Integer humidity;
-    private String time;
-
 }

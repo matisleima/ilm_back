@@ -1,12 +1,13 @@
 package com.example.ilm_back.business;
 
+import com.example.ilm_back.business.dto.StatisticDto;
+import com.example.ilm_back.business.dto.WeatherDataDTO;
 import com.example.ilm_back.domain.statistic.Statistic;
 import com.example.ilm_back.domain.statistic.StatisticMapper;
 import com.example.ilm_back.domain.statistic.StatisticService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;

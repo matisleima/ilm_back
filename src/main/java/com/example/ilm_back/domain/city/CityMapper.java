@@ -1,6 +1,6 @@
 package com.example.ilm_back.domain.city;
 
-import com.example.ilm_back.business.CityDto;
+import com.example.ilm_back.business.dto.CityDto;
 import org.mapstruct.*;
 
 import java.util.List;

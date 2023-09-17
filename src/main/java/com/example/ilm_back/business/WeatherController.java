@@ -1,5 +1,8 @@
 package com.example.ilm_back.business;
 
+import com.example.ilm_back.business.dto.CityDto;
+import com.example.ilm_back.business.dto.StatisticDto;
+import com.example.ilm_back.business.dto.WeatherDataDTO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 

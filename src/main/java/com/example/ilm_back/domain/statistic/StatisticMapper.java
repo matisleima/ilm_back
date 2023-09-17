@@ -1,7 +1,7 @@
 package com.example.ilm_back.domain.statistic;
 
-import com.example.ilm_back.business.StatisticDto;
-import com.example.ilm_back.business.WeatherDataDTO;
+import com.example.ilm_back.business.dto.StatisticDto;
+import com.example.ilm_back.business.dto.WeatherDataDTO;
 import org.mapstruct.*;
 
 import java.util.List;

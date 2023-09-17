@@ -1,4 +1,4 @@
-package com.example.ilm_back.business;
+package com.example.ilm_back.business.dto;
 
 import com.example.ilm_back.domain.city.City;
 import jakarta.validation.constraints.NotNull;
