@@ -4,7 +4,7 @@ CREATE TABLE weather.statistics (
                                     temp decimal  NOT NULL,
                                     wind decimal  NOT NULL,
                                     humidity int  NOT NULL,
-                                    time varchar  NOT NULL,
+                                    time varchar,
                                     CONSTRAINT statistics_pk PRIMARY KEY (id)
 );
 

@@ -19,15 +19,13 @@ public class WeatherController {
     public void saveWeatherData(@RequestParam String city,
                                 @RequestParam Double temp,
                                 @RequestParam Double wind,
-                                @RequestParam Integer humidity,
-                                @RequestParam String time) {
+                                @RequestParam Integer humidity) {
 
         WeatherDataDTO request = WeatherDataDTO.builder()
                 .city(city)
                 .temp(BigDecimal.valueOf(temp))
                 .wind(BigDecimal.valueOf(wind))
                 .humidity(humidity)
-                .time(time)
                 .build();
 
         weatherService.saveWeatherData(request);
@@ -35,6 +33,7 @@ public class WeatherController {
 
     @GetMapping("/show")
     public List<StatisticDto> getWeatherData(@RequestParam String city) {
+
         return weatherService.getWeatherData(city);
     }
 

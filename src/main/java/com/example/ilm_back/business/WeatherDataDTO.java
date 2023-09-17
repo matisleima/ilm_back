@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 /**
  * DTO for {@link Statistic}
@@ -29,8 +30,4 @@ public class WeatherDataDTO implements Serializable {
     private BigDecimal wind;
     @NotNull
     private Integer humidity;
-    @NotNull
-    private String time;
-    @NotNull
-    private Boolean tracked = false;
 }

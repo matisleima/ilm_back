@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalTime;
 
 @Getter
@@ -36,8 +37,6 @@ public class Statistic {
     @Column(name = "humidity", nullable = false)
     private Integer humidity;
 
-    @NotNull
-    @Column(name = "\"time\"", nullable = false)
     private String time;
 
 }
