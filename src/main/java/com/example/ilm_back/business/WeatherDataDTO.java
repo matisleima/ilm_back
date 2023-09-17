@@ -1,5 +1,6 @@
 package com.example.ilm_back.business;
 
+import com.example.ilm_back.domain.statistic.Statistic;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -9,10 +10,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalTime;
 
 /**
- * DTO for {@link com.example.ilm_back.domain.statistic.Statistic}
+ * DTO for {@link Statistic}
  */
 @Data
 @AllArgsConstructor

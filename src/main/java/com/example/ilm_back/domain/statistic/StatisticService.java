@@ -18,4 +18,8 @@ public class StatisticService {
     public List<Statistic> getWeatherData(String city) {
         return statisticRepository.getWeatherDataBy(city);
     }
+
+    public void deleteWeatherData() {
+        statisticRepository.deleteAll();
+    }
 }

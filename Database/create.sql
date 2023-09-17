@@ -5,5 +5,11 @@ CREATE TABLE weather.statistics (
                                     wind decimal  NOT NULL,
                                     humidity int  NOT NULL,
                                     time varchar  NOT NULL,
-                                    CONSTRAINT contact_pk PRIMARY KEY (id)
+                                    CONSTRAINT statistics_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE weather.city (
+                                    id serial  NOT NULL,
+                                    city varchar(255)  NOT NULL,
+                                    CONSTRAINT city_pk PRIMARY KEY (id)
 );

@@ -24,4 +24,8 @@ public class WeatherService {
         List<Statistic> weatherData = statisticService.getWeatherData(city);
         return statisticMapper.toDtos(weatherData);
     }
+
+    public void deleteWeatherData() {
+        statisticService.deleteWeatherData();
+    }
 }

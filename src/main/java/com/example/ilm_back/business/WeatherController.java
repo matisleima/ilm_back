@@ -1,10 +1,7 @@
 package com.example.ilm_back.business;
 
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,6 +11,9 @@ public class WeatherController {
 
     @Resource
     private WeatherService weatherService;
+
+    @Resource
+    private CitiesService citiesService;
 
     @PostMapping("/record")
     public void saveWeatherData(@RequestParam String city,
@@ -36,5 +36,25 @@ public class WeatherController {
     @GetMapping("/show")
     public List<StatisticDto> getWeatherData(@RequestParam String city) {
         return weatherService.getWeatherData(city);
+    }
+
+    @DeleteMapping("/delete")
+    public void deleteWeatherData() {
+        weatherService.deleteWeatherData();
+    }
+
+    @PostMapping("/add")
+    public void addCity(@RequestParam String cityName) {
+        citiesService.createAndSaveCity(cityName);
+    }
+
+    @GetMapping("/get-cities")
+    public List<CityDto> getRecordedCities() {
+        return citiesService.getRecordedCities();
+    }
+
+    @DeleteMapping("/remove")
+    public void removeCity(@RequestParam String cityName) {
+        citiesService.removeCity(cityName);
     }
 }

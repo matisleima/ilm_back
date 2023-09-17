@@ -1,6 +1,6 @@
 package com.example.ilm_back.business;
 
-import com.example.ilm_back.domain.statistic.Statistic;
+import com.example.ilm_back.domain.city.City;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -8,26 +8,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
- * DTO for {@link Statistic}
+ * DTO for {@link City}
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StatisticDto implements Serializable {
+public class CityDto implements Serializable {
     private Integer id;
     @NotNull
     @Size(max = 255)
     private String city;
-    @NotNull
-    private BigDecimal temp;
-    @NotNull
-    private BigDecimal wind;
-    @NotNull
-    private Integer humidity;
-    @NotNull
-    private String time;
-
 }
