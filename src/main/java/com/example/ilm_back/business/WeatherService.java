@@ -54,14 +54,6 @@ public class WeatherService {
         statisticService.saveWeatherData(statistic);
     }
 
-    private static void setTimestampToStatistic(Statistic statistic) {
-        Instant now = Instant.now();
-        LocalDateTime ldt = LocalDateTime.ofInstant(now, ZoneId.systemDefault());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd.MM.yyyy");
-        String formattedTimestamp = ldt.format(formatter);
-        statistic.setTime(formattedTimestamp);
-    }
-
 
     public List<StatisticDto> getWeatherData(String city) {
         List<Statistic> weatherData = statisticService.getWeatherData(city);
@@ -70,6 +62,14 @@ public class WeatherService {
 
     public void deleteWeatherData() {
         statisticService.deleteWeatherData();
+    }
+
+    private static void setTimestampToStatistic(Statistic statistic) {
+        Instant now = Instant.now();
+        LocalDateTime ldt = LocalDateTime.ofInstant(now, ZoneId.systemDefault());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd.MM.yyyy");
+        String formattedTimestamp = ldt.format(formatter);
+        statistic.setTime(formattedTimestamp);
     }
 
 }

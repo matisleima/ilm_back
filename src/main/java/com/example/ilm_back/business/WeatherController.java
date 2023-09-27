@@ -37,14 +37,25 @@ public class WeatherController {
         weatherService.saveWeatherData(request);
     }
 
-    @GetMapping("/show")
+    @PostMapping("/add")
+    @Operation(summary = "Lisab linna nime nimekirja, mille alusel regulaarselt ilmaandmeid kogutakse.")
+    public void addCity(@RequestParam String cityName) {
+        citiesService.createAndSaveCity(cityName);
+    }
+
+    @GetMapping("/get-statistics")
     @Operation(summary = "Tagastab linna nime järgi andmebaasi salvestatud ilmainfo.")
     public List<StatisticDto> getWeatherData(@RequestParam String city) {
-
         return weatherService.getWeatherData(city);
     }
 
-    @GetMapping("/manual/get-weather")
+    @GetMapping("/get-cities")
+    @Operation(summary = "Tagastab nimekirja linnadest, mille kohta regulaarselt ilmaandmeid kogutakse.")
+    public List<CityDto> getRecordedCities() {
+        return citiesService.getRecordedCities();
+    }
+
+    @GetMapping("/get-weather")
     @Operation(summary = "Tagastab linna nime järgi OpenWeatherMapist ilmaandmed.")
     public WeatherResponse getWeatherDataNew(@RequestParam String city) {
         return weatherService.getWeatherDataNew(city);
@@ -54,18 +65,6 @@ public class WeatherController {
     @Operation(summary = "Kustutab kogu andmebaasi salvestatud ilmaandmete statistika.")
     public void deleteWeatherData() {
         weatherService.deleteWeatherData();
-    }
-
-    @PostMapping("/add")
-    @Operation(summary = "Lisab linna nime nimekirja, mille alusel regulaarselt ilmaandmeid kogutakse.")
-    public void addCity(@RequestParam String cityName) {
-        citiesService.createAndSaveCity(cityName);
-    }
-
-    @GetMapping("/get-cities")
-    @Operation(summary = "Tagastab nimekirja linnadest, mille kohta regulaarselt ilmaandmeid kogutakse.")
-    public List<CityDto> getRecordedCities() {
-        return citiesService.getRecordedCities();
     }
 
     @DeleteMapping("/remove")
